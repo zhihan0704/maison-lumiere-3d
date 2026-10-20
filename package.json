@@ -1,0 +1,33 @@
+{
+  "name": "default-workspace",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint src/viewer.js && node --check output/viewer.bundle.js",
+    "build:node": "node scripts/build-node.mjs",
+    "optimize:glb": "node scripts/optimize-glb.mjs",
+    "build:viewer": "node_modules/@esbuild/win32-x64/esbuild.exe src/viewer.js --bundle --format=iife --minify --target=es2020 --legal-comments=none --outfile=output/viewer.bundle.js",
+    "finalize": "node scripts/finalize.mjs",
+    "assemble": "node scripts/assemble.mjs",
+    "build": "npm run build:node && npm run optimize:glb && npm run build:viewer && npm run finalize && npm run assemble"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@gltf-transform/core": "^4.2.1",
+    "@gltf-transform/extensions": "^4.2.1",
+    "@gltf-transform/functions": "^4.2.1",
+    "@napi-rs/canvas": "^0.1.80",
+    "esbuild": "^0.25.9",
+    "eslint": "^9.39.5",
+    "globals": "^17.13.0",
+    "gltf-validator": "^2.0.0-dev.3.10",
+    "meshoptimizer": "^0.24.0",
+    "playwright-core": "^1.55.0",
+    "three": "^0.180.0",
+    "ws": "^8.18.3"
+  },
+  "type": "module"
+}

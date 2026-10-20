@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#efe8da">
+<title>Maison Lumière · 卢米埃庄园 | 交互式法式别墅</title>
+<style>__VIEWER_CSS__</style>
+</head>
+<body>
+<div id="app">
+  <div id="canvas-wrap" aria-label="可自由旋转缩放的三维别墅模型"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="photo-tip" id="photo-tip" aria-hidden="true"><b>H</b> 退出取景 · PHOTO MODE</div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Maison Lumière 首页" id="brand">
+      <span class="crest" aria-hidden="true">
+        <svg viewBox="0 0 56 64" fill="none">
+          <path d="M28 3.5c7.8 0 14.4 5.3 16.6 12.7M28 3.5c-7.8 0-14.4 5.3-16.6 12.7" stroke="currentColor" stroke-width="1.1"/>
+          <path d="M9.5 19.5h37M12.5 24h31" stroke="currentColor" stroke-width="1"/>
+          <path d="M14.5 55.5V32.5c0-7.4 6-13.4 13.5-13.4s13.5 6 13.5 13.4v23" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M28 19v36.5M19.5 35.5h17M20 44h16" stroke="currentColor" stroke-width=".9" opacity=".72"/>
+          <path d="M14 55.5c4.7 3.1 9.4 4.7 14 4.7s9.3-1.6 14-4.7" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M19.5 28.8 28 22l8.5 6.8" stroke="currentColor" stroke-width=".9" opacity=".7"/>
+          <circle cx="28" cy="3.4" r="2.1" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="brand-lockup">
+        <span class="brand-eyebrow">ARCHITECTURE · INTERACTIVE EDITION</span>
+        <span class="brand-name">MAISON LUMIÈRE</span>
+        <span class="brand-sub">卢米埃庄园 · 三层法式宅邸</span>
+      </span>
+    </a>
+
+    <div class="top-actions" role="toolbar" aria-label="视图工具">
+      <button class="icon-button" id="btn-reset" title="重置视角 (R)" aria-label="重置视角">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.2 8.1A6.3 6.3 0 1 1 4 12.3M4.2 3.8v4.5h4.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="button-label">重置</span>
+      </button>
+      <button class="icon-button is-on" id="btn-labels" aria-pressed="true" title="显示或隐藏空间标注 (L)" aria-label="切换空间标注">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.4 4.2h7.1v7.6H3.4zM10.5 7.7l2.2 2.1 3.9-3.9M6 15.7h8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/></svg>
+        <span class="button-label">标注</span>
+      </button>
+      <button class="icon-button" id="btn-rotate" aria-pressed="false" title="自动环绕" aria-label="自动环绕">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16 10a6 6 0 1 1-1.8-4.3M16 3.7v4.6h-4.6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10" r="1.2" fill="currentColor"/></svg>
+        <span class="button-label">环绕</span>
+      </button>
+      <button class="theme-button" id="btn-night" aria-label="切换昼夜光照" title="切换昼夜光照 (N)">
+        <span class="theme-icon sun" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3.4" stroke="currentColor" stroke-width="1.2"/><path d="M10 2.3v2M10 15.7v2M2.3 10h2M15.7 10h2M4.7 4.7l1.4 1.4M13.9 13.9l1.4 1.4M15.3 4.7l-1.4 1.4M6.1 13.9l-1.4 1.4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+        </span>
+        <span class="theme-icon moon" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M15.8 12.8A6.7 6.7 0 0 1 7.2 4.2a6.8 6.8 0 1 0 8.6 8.6Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="theme-text"><em id="theme-label">日间</em><small id="theme-sub">CLEAR AFTERNOON</small></span>
+      </button>
+      <button class="icon-button" id="btn-fullscreen" title="全屏" aria-label="进入全屏">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 3.8H3.8V7M13 3.8h3.2V7M7 16.2H3.8V13M13 16.2h3.2V13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <span class="button-label">全屏</span>
+      </button>
+      <button class="icon-button" id="btn-photo" title="沉浸取景，隐藏界面 (H)" aria-label="切换沉浸取景模式" aria-pressed="false">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.2 6.2h3.1l1-1.8h5.4l1 1.8h3.1v9.1H3.2z" stroke="currentColor" stroke-width="1.15" stroke-linejoin="round"/><circle cx="10" cy="10.6" r="2.5" stroke="currentColor" stroke-width="1.15"/><circle cx="14.8" cy="7.7" r=".55" fill="currentColor"/></svg>
+        <span class="button-label">取景</span>
+      </button>
+      <button class="download-button" id="btn-download" title="下载 GLB 模型">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2.8v10.1M6.1 9.2 10 13.1l3.9-3.9M3.5 15.9h13" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>GLB</span>
+      </button>
+      <button class="icon-button panel-toggle" id="btn-panel" title="打开或收起空间目录" aria-label="切换空间目录" aria-pressed="true">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 4.2h13v11.6h-13zM12.3 4.2v11.6M6.3 7.2h3.5M6.3 10h3.5M6.3 12.8h3.5" stroke="currentColor" stroke-width="1.15" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <aside class="side-panel" id="side-panel" aria-label="空间目录">
+    <span class="panel-accent" aria-hidden="true"></span>
+    <button class="panel-close" id="btn-panel-close" aria-label="收起空间目录">
+      <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="m4 4 10 10M14 4 4 14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="panel-head">
+      <span class="eyebrow">THE PLAN · 空间导览</span>
+      <h2>宅邸空间</h2>
+      <p class="panel-intro">对称石构立面之下，二十个法式空间围绕花园轴线展开。点击空间名称或模型标注，可进入房间并阅读空间说明。</p>
+      <div class="metrics">
+        <div><strong>03</strong><span>楼层</span></div>
+        <div><strong>20</strong><span>房间</span></div>
+        <div><strong>1,121</strong><span>净面积 m²</span></div>
+      </div>
+    </div>
+    <div class="panel-section-head">
+      <span>空间目录</span>
+      <span class="tiny" id="directory-level">全部楼层</span>
+    </div>
+    <div class="room-list" id="room-list"></div>
+    <div class="panel-footer">
+      <div class="validation-row">
+        <span class="check-dot" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none"><path d="m3.3 8.4 3 3c.3.3.8.3 1.1 0l5.3-5.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span id="validation-text">几何校验通过</span>
+      </div>
+      <div class="material-legend" aria-label="主要材质">
+        <span><i style="--c:#e9e1d2"></i>石灰石</span>
+        <span><i style="--c:#f4efe4"></i>石膏</span>
+        <span><i style="--c:#3a2d20"></i>古铜</span>
+        <span><i style="--c:#b7b5af"></i>陶瓦</span>
+        <span><i style="--c:#a98a57"></i>黄铜</span>
+      </div>
+      <div class="panel-footnote">PBR · 实时阴影 · 自动布局校验</div>
+    </div>
+  </aside>
+
+  <section class="room-card" id="room-card" aria-label="空间详情" aria-live="polite">
+    <div class="room-card-rule" aria-hidden="true"></div>
+    <button class="room-card-close" id="room-card-close" aria-label="关闭空间详情">
+      <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="m4 4 10 10M14 4 4 14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="room-card-head">
+      <span class="eyebrow" id="card-index">SPACE 01 · 一层</span>
+      <h2 id="card-title">大沙龙</h2>
+      <p class="card-fr" id="card-fr">Grand Salon</p>
+    </div>
+    <div class="card-meta">
+      <span><small>净面积</small><b id="card-area">68.9 m²</b></span>
+      <span><small>空间性质</small><b id="card-use">礼仪会客厅</b></span>
+      <span><small>楼层</small><b id="card-floor">一层</b></span>
+    </div>
+    <p class="card-description" id="card-description"></p>
+    <div class="card-columns">
+      <div>
+        <span class="small-label">空间特征 / FEATURES</span>
+        <div class="feature-list" id="card-features"></div>
+      </div>
+      <div>
+        <span class="small-label">材质色谱 / PALETTE</span>
+        <div class="palette" id="card-palette"></div>
+      </div>
+    </div>
+    <div class="card-foot">
+      <span class="card-coords" id="card-coords"></span>
+      <button class="text-button" id="card-reset">回到本层视角</button>
+    </div>
+  </section>
+
+  <div class="floor-dock" role="navigation" aria-label="楼层切换">
+    <span class="dock-caption"><em>LEVELS</em><i></i><span id="dock-floor-name">全貌</span></span>
+    <div class="floor-buttons">
+      <button class="floor-button is-active" data-floor="all"><span class="rom">00</span><span class="floor-name">全貌<small>OVERVIEW</small></span></button>
+      <button class="floor-button" data-floor="0"><span class="rom">01</span><span class="floor-name">一层<small>REZ-DE-CHAUSSÉE</small></span></button>
+      <button class="floor-button" data-floor="1"><span class="rom">02</span><span class="floor-name">二层<small>PREMIER ÉTAGE</small></span></button>
+      <button class="floor-button" data-floor="2"><span class="rom">03</span><span class="floor-name">三层<small>DEUXIÈME ÉTAGE</small></span></button>
+    </div>
+    <span class="dock-divider" aria-hidden="true"></span>
+    <button class="dock-tool" id="btn-cutaway" aria-pressed="true" title="切换墙体剖切 (C)" style="display:none">
+      <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 6.2 10 2.9l6.5 3.3v7.6L10 17.1l-6.5-3.3zM3.5 6.2 10 9.5l6.5-3.3M10 9.5v7.6" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M2.2 11.8h15.6" stroke="currentColor" stroke-width="1.3" stroke-dasharray="2.2 2"/></svg>
+      <span>剖切</span>
+    </button>
+  </div>
+
+  <div class="controls-hint">
+    <div class="compass" id="compass" aria-hidden="true"><span>N</span><i id="compass-needle"></i></div>
+    <div class="hint-copy">
+      <span><b>拖拽</b> 旋转</span><i></i><span><b>滚轮</b> 缩放</span><i></i><span><b>右键</b> 平移</span><i></i><span><b>点击标注</b> 查看空间</span>
+    </div>
+    <div class="key-hint">快捷键 · 0 全貌 / 1–3 楼层 / N 昼夜 / L 标注 / H 取景 / R 重置</div>
+  </div>
+
+  <div class="site-signature" aria-hidden="true">
+    <span>MAISON LUMIÈRE</span><i></i><span>54 × 62 M PARC</span>
+  </div>
+
+  <div class="map-labels" id="label-layer" aria-live="polite"></div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <div class="loading-screen" id="loader">
+    <div class="loading-noise" aria-hidden="true"></div>
+    <div class="loading-inner">
+      <div class="loading-crest" aria-hidden="true">
+        <svg viewBox="0 0 90 100" fill="none">
+          <circle cx="45" cy="50" r="41" stroke="currentColor" stroke-width=".8" opacity=".45"/>
+          <circle cx="45" cy="50" r="34" stroke="currentColor" stroke-width=".6" opacity=".3"/>
+          <path d="M31 68V39c0-8.2 6.3-14.8 14-14.8S59 30.8 59 39v29M31 48h28M37 58h16" stroke="currentColor" stroke-width="1.15"/>
+          <path d="M23 74.5c7 4.2 14.4 6.3 22 6.3s15-2.1 22-6.3" stroke="currentColor" stroke-width="1"/>
+          <path d="M45 7v8M38.5 10.5 45 15l6.5-4.5" stroke="currentColor" stroke-width=".9"/>
+        </svg>
+      </div>
+      <span class="loading-eyebrow">PROCEDURAL ARCHITECTURAL MODEL · MMXXVI</span>
+      <h1>卢米埃庄园</h1>
+      <p class="loading-fr">MAISON LUMIÈRE</p>
+      <div class="loading-title-rule"><i></i><span>三 层 法 式 宅 邸</span><i></i></div>
+      <div class="loading-progress" aria-hidden="true"><div id="loader-bar"></div></div>
+      <div class="loading-meta"><span id="loader-status">载入空间与材质…</span><span id="loader-pct">0%</span></div>
+      <div class="loading-tags">
+        <span>PBR MATERIALS</span><span>20 SPACES</span><span>AUTO-VALIDATED</span><span>GLB READY</span>
+      </div>
+    </div>
+    <div class="loading-entry" id="loading-entry">
+      <div class="loading-entry-inner">
+        <span class="loading-eyebrow">AN INTERACTIVE NIGHT WALK</span>
+        <h2>月 光 宅 邸</h2>
+        <p class="loading-entry-fr">MAISON LUMIÈRE</p>
+        <button class="entry-button" id="entry-button" type="button">
+          <span>进 入 宅 邸</span>
+          <small>点击进入 · 建议佩戴耳机</small>
+        </button>
+        <p class="loading-entry-hint entry-wechat-hint">微信内如白屏或无声，请点右上角 ··· → 在浏览器打开</p>
+      </div>
+    </div>
+    <div class="loading-foot">
+      <span>拖拽旋转 · 滚轮缩放 · 分层查看 · 昼夜切换</span>
+      <span>54 × 62 M FORMAL GARDEN</span>
+    </div>
+  </div>
+
+  <div class="compat-hint" id="compat-hint" role="alert" hidden>
+    <span>如白屏或无法显示，请点击右上角用系统浏览器打开</span>
+  </div>
+
+  <noscript><div class="no-script">请启用 JavaScript 以查看交互式三维模型。</div></noscript>
+</div>
+
+<!--
+  Background music: Beethoven — Piano Sonata No. 14 "Moonlight", Op. 27 No. 2,
+  I. Adagio sostenuto. Performance: Noble Music Project.
+
+  The MP3 is embedded below as base64 chunks. No external URL, local sibling file
+  or network request is used for audio. The single "进入宅邸" click starts both
+  playback and the opening from the same user gesture, so the score is audible
+  from the first camera frame without any music control or status UI.
+
+  Music is intentionally user-silent UI-wise and looped at 30% volume.
+  The supplied performance is for this private project; verify rights before
+  public redistribution.
+-->
+<audio id="bg-music" preload="auto" loop aria-hidden="true"></audio>
+<div id="music-data" hidden aria-hidden="true">__MUSIC_CHUNKS__</div>
+
+<script id="villa-data" type="application/json">__MANIFEST_HTML__</script>
+<div id="glb-data" hidden aria-hidden="true">__GLB_CHUNKS__</div>
+<script>__VIEWER_BUNDLE__</script>
+</body>
+</html>

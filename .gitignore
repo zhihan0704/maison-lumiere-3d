@@ -1,0 +1,19 @@
+# 依赖
+node_modules/
+
+# 临时 / 缓存 / 内网穿透隧道目录
+.tmp/
+.dsh/
+.tunnel/
+.tunnelhome/
+.cloudflaredhome/
+.npm-cache/
+.cloudflared/
+
+# 系统垃圾
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 第三方隧道工具二进制（不属于项目内容）
+tools/cloudflared.exe

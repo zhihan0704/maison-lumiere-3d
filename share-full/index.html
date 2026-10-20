@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1318">
+<title>Maison Lumière · 正在载入</title>
+<style>
+  :root { --paper:#f5efe3; --ink:#28231c; --gold:#c3a568; --muted:#a99a83; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:#0d1318; color:var(--paper); font-family:"Songti SC","Noto Serif SC",serif; }
+  body { display:grid; place-items:center; overflow:hidden; }
+  .wrap { width:min(520px,86vw); text-align:center; }
+  .crest { width:52px; height:60px; margin:0 auto 24px; color:var(--gold); opacity:.9; }
+  .crest svg { width:100%; height:100%; display:block; }
+  .eyebrow { font-family:Georgia,serif; font-size:9px; letter-spacing:.28em; color:var(--muted); }
+  h1 { margin:14px 0 4px; font-size:clamp(28px,7vw,40px); font-weight:400; letter-spacing:.22em; }
+  .fr { margin:0; font-family:Georgia,serif; font-size:10px; letter-spacing:.3em; color:var(--gold); }
+  .bar { width:100%; height:1px; background:rgba(255,255,255,.14); margin-top:38px; position:relative; }
+  .bar i { position:absolute; inset:0 auto 0 0; width:0; background:var(--gold); transition:width .35s ease; }
+  .meta { display:flex; justify-content:space-between; margin-top:11px; font-family:"Microsoft YaHei",sans-serif; font-size:10px; letter-spacing:.08em; color:var(--muted); }
+  .status { margin:18px 0 0; font-family:"Microsoft YaHei",sans-serif; font-size:10px; line-height:1.8; letter-spacing:.04em; color:var(--muted); }
+  .hint { display:none; margin-top:22px; padding:12px 16px; border:1px solid rgba(195,165,104,.45); color:var(--paper); font-family:"Microsoft YaHei",sans-serif; font-size:11px; line-height:1.8; }
+  .hint.is-visible { display:block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crest" aria-hidden="true">
+    <svg viewBox="0 0 56 64" fill="none">
+      <path d="M28 3.5c7.8 0 14.4 5.3 16.6 12.7M28 3.5c-7.8 0-14.4 5.3-16.6 12.7" stroke="currentColor" stroke-width="1.1"/>
+      <path d="M9.5 19.5h37M12.5 24h31" stroke="currentColor"/>
+      <path d="M14.5 55.5V32.5c0-7.4 6-13.4 13.5-13.4s13.5 6 13.5 13.4v23" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M28 19v36.5M19.5 35.5h17M20 44h16" stroke="currentColor" stroke-width=".9" opacity=".72"/>
+      <path d="M14 55.5c4.7 3.1 9.4 4.7 14 4.7s9.3-1.6 14-4.7" stroke="currentColor" stroke-width="1.2"/>
+    </svg>
+  </div>
+  <div class="eyebrow">MAISON LUMIÈRE</div>
+  <h1>月 光 宅 邸</h1>
+  <p class="fr">AN INTERACTIVE NIGHT WALK</p>
+  <div class="bar"><i id="bar"></i></div>
+  <div class="meta"><span id="status">准备场景…</span><span id="pct">0%</span></div>
+  <p class="status">首次打开需要加载 3D 场景与内嵌音乐，请稍候。<br>微信内如长时间无响应，请用系统浏览器打开。</p>
+  <div class="hint" id="hint">加载中断。请刷新页面重试；微信内请点右上角 ··· → 在浏览器打开。</div>
+</div>
+<script>
+(async () => {
+  const bar = document.getElementById('bar');
+  const pct = document.getElementById('pct');
+  const status = document.getElementById('status');
+  const hint = document.getElementById('hint');
+  const fail = message => {
+    status.textContent = '加载未完成';
+    hint.classList.add('is-visible');
+    if (message) hint.textContent = message;
+  };
+  try {
+    const meta = await (await fetch('chunks.json', { cache: 'no-store' })).json();
+    const total = Number(meta.count);
+    if (!Number.isFinite(total) || total < 1) throw new Error('Invalid chunk count');
+    const parts = [];
+    for (let i = 0; i < total; i++) {
+      let done = false;
+      for (let attempt = 0; attempt < 4 && !done; attempt++) {
+        try {
+          const response = await fetch('chunk/' + i, { cache: 'no-store' });
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          parts.push(new Uint8Array(await response.arrayBuffer()));
+          done = true;
+        } catch (err) {
+          if (attempt === 3) throw err;
+          status.textContent = '网络较慢，正在重试…';
+          await new Promise(resolve => setTimeout(resolve, 900));
+        }
+      }
+      const p = Math.round((i + 1) / total * 100);
+      bar.style.width = p + '%';
+      pct.textContent = p + '%';
+      status.textContent = p < 100 ? '正在加载场景…' : '正在组装场景…';
+    }
+    const length = parts.reduce((sum, part) => sum + part.length, 0);
+    const bytes = new Uint8Array(length);
+    let offset = 0;
+    for (const part of parts) {
+      bytes.set(part, offset);
+      offset += part.length;
+    }
+    status.textContent = '正在启动…';
+    const html = new TextDecoder('utf-8').decode(bytes);
+    document.open();
+    document.write(html);
+    document.close();
+  } catch (err) {
+    console.error(err);
+    fail();
+  }
+})();
+</script>
+</body>
+</html>

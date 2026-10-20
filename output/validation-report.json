@@ -1,0 +1,437 @@
+{
+  "ok": true,
+  "generatedAt": "2026-10-19T15:07:57.144Z",
+  "engine": "Maison Validation 1.0",
+  "summary": {
+    "rooms": 20,
+    "floors": 3,
+    "furnitureObjects": 133,
+    "collidableObjects": 125,
+    "autoFixes": 10,
+    "collisions": 0,
+    "failures": 0,
+    "totalArea": 1121,
+    "khronosErrors": 0,
+    "glbOk": true,
+    "checksPassed": 8,
+    "checksTotal": 8
+  },
+  "checks": [
+    {
+      "id": "bounds",
+      "label": "家具均在房间边界内",
+      "status": "pass"
+    },
+    {
+      "id": "overlap",
+      "label": "家具之间无穿模/重叠",
+      "status": "pass"
+    },
+    {
+      "id": "support",
+      "label": "落地家具均有地面支撑",
+      "status": "pass"
+    },
+    {
+      "id": "ceiling",
+      "label": "所有物件低于净空",
+      "status": "pass"
+    },
+    {
+      "id": "doors",
+      "label": "门洞与主要通道保持净空",
+      "status": "pass"
+    },
+    {
+      "id": "labels",
+      "label": "房间标签落位于对应空间",
+      "status": "pass"
+    },
+    {
+      "id": "glb",
+      "label": "GLB 文件结构与嵌入资源完整",
+      "status": "pass"
+    },
+    {
+      "id": "khronos",
+      "label": "Khronos glTF 官方校验器 0 错误",
+      "status": "pass"
+    }
+  ],
+  "fixes": [
+    {
+      "id": "dining-cart",
+      "room": "dining",
+      "issue": "not resting on floor",
+      "from": [
+        4.25,
+        6.9
+      ],
+      "to": [
+        4.25,
+        6.9
+      ],
+      "dy": 0.11200000584125519
+    },
+    {
+      "id": "dining-plant",
+      "room": "dining",
+      "issue": "outside room bounds",
+      "from": [
+        3.351539667501666,
+        0.5532628842011594
+      ],
+      "to": [
+        4.05,
+        1.4167371157988407
+      ],
+      "dy": 0
+    },
+    {
+      "id": "vestibule-plant-1",
+      "room": "vestibule",
+      "issue": "outside room bounds",
+      "from": [
+        1.5825908621474676,
+        6.5199798963225115
+      ],
+      "to": [
+        2.25,
+        6.954546363450596
+      ],
+      "dy": 0
+    },
+    {
+      "id": "library-plant",
+      "room": "library",
+      "issue": "overlaps another object",
+      "from": [
+        -11.85,
+        -6.8
+      ],
+      "to": [
+        -11.9,
+        -6.7133974596215555
+      ],
+      "dy": 0
+    },
+    {
+      "id": "kitchen-plant",
+      "room": "kitchen",
+      "issue": "outside room bounds",
+      "from": [
+        3.455932514035962,
+        -0.6479748379286324
+      ],
+      "to": [
+        4.05,
+        -0.16411960879856838
+      ],
+      "dy": 0
+    },
+    {
+      "id": "bath-stool",
+      "room": "master-bath",
+      "issue": "blocks a doorway",
+      "from": [
+        -9.4,
+        -3.75
+      ],
+      "to": [
+        -9.470710678118655,
+        -3.6792893218813454
+      ],
+      "dy": 0
+    },
+    {
+      "id": "suite3-armchair",
+      "room": "suite-3",
+      "issue": "overlaps another object",
+      "from": [
+        -5.85,
+        6.15
+      ],
+      "to": [
+        -5.1738519215976515,
+        6.331173331571765
+      ],
+      "dy": 0
+    },
+    {
+      "id": "atelier-chair",
+      "room": "atelier",
+      "issue": "overlaps another object",
+      "from": [
+        6.25,
+        6.15
+      ],
+      "to": [
+        6.094708572938488,
+        5.570444504226559
+      ],
+      "dy": 0
+    },
+    {
+      "id": "gym-plant",
+      "room": "gym",
+      "issue": "outside room bounds",
+      "from": [
+        4.50927971469475,
+        -0.42853170312381966
+      ],
+      "to": [
+        5,
+        -0.11748789996295206
+      ],
+      "dy": 0
+    },
+    {
+      "id": "suite3-armchair",
+      "room": "suite-3",
+      "issue": "overlaps another object",
+      "from": [
+        -5.1738519215976515,
+        6.331173331571765
+      ],
+      "to": [
+        -5.773851921597652,
+        5.291942847030439
+      ],
+      "dy": 0
+    }
+  ],
+  "collisions": [],
+  "failures": [],
+  "rooms": [
+    {
+      "id": "salon",
+      "name": "大沙龙",
+      "floor": 0,
+      "area": 65.3,
+      "items": 10,
+      "collidable": 9,
+      "collisions": 0
+    },
+    {
+      "id": "dining",
+      "name": "餐厅",
+      "floor": 0,
+      "area": 65.3,
+      "items": 5,
+      "collidable": 5,
+      "collisions": 0
+    },
+    {
+      "id": "vestibule",
+      "name": "门厅",
+      "floor": 0,
+      "area": 37.7,
+      "items": 6,
+      "collidable": 6,
+      "collisions": 0
+    },
+    {
+      "id": "stair-gf",
+      "name": "荣誉楼梯厅",
+      "floor": 0,
+      "area": 52.9,
+      "items": 1,
+      "collidable": 0,
+      "collisions": 0
+    },
+    {
+      "id": "library",
+      "name": "书房",
+      "floor": 0,
+      "area": 76.4,
+      "items": 10,
+      "collidable": 9,
+      "collisions": 0
+    },
+    {
+      "id": "kitchen",
+      "name": "厨房与早餐区",
+      "floor": 0,
+      "area": 76.4,
+      "items": 8,
+      "collidable": 8,
+      "collisions": 0
+    },
+    {
+      "id": "master-suite",
+      "name": "主卧套房",
+      "floor": 1,
+      "area": 65.3,
+      "items": 11,
+      "collidable": 11,
+      "collisions": 0
+    },
+    {
+      "id": "master-bath",
+      "name": "主卫",
+      "floor": 1,
+      "area": 35.1,
+      "items": 6,
+      "collidable": 6,
+      "collisions": 0
+    },
+    {
+      "id": "dressing",
+      "name": "衣帽间",
+      "floor": 1,
+      "area": 41.3,
+      "items": 6,
+      "collidable": 5,
+      "collisions": 0
+    },
+    {
+      "id": "guest-1",
+      "name": "客卧一",
+      "floor": 1,
+      "area": 65.3,
+      "items": 8,
+      "collidable": 8,
+      "collisions": 0
+    },
+    {
+      "id": "guest-2",
+      "name": "客卧二",
+      "floor": 1,
+      "area": 46.3,
+      "items": 9,
+      "collidable": 9,
+      "collisions": 0
+    },
+    {
+      "id": "guest-bath",
+      "name": "客卫",
+      "floor": 1,
+      "area": 30.1,
+      "items": 4,
+      "collidable": 4,
+      "collisions": 0
+    },
+    {
+      "id": "family-lounge",
+      "name": "家庭起居厅",
+      "floor": 1,
+      "area": 37.7,
+      "items": 6,
+      "collidable": 6,
+      "collisions": 0
+    },
+    {
+      "id": "landing-1",
+      "name": "二层楼梯厅",
+      "floor": 1,
+      "area": 52.9,
+      "items": 2,
+      "collidable": 2,
+      "collisions": 0
+    },
+    {
+      "id": "belvedere",
+      "name": "观景厅",
+      "floor": 2,
+      "area": 49.2,
+      "items": 7,
+      "collidable": 7,
+      "collisions": 0
+    },
+    {
+      "id": "suite-3",
+      "name": "客卧套房",
+      "floor": 2,
+      "area": 58.8,
+      "items": 10,
+      "collidable": 10,
+      "collisions": 0
+    },
+    {
+      "id": "atelier",
+      "name": "画室",
+      "floor": 2,
+      "area": 58.8,
+      "items": 8,
+      "collidable": 8,
+      "collisions": 0
+    },
+    {
+      "id": "cinema",
+      "name": "私人影院",
+      "floor": 2,
+      "area": 68.7,
+      "items": 8,
+      "collidable": 6,
+      "collisions": 0
+    },
+    {
+      "id": "gym",
+      "name": "私人健身房",
+      "floor": 2,
+      "area": 68.7,
+      "items": 7,
+      "collidable": 4,
+      "collisions": 0
+    },
+    {
+      "id": "landing-3",
+      "name": "三层楼梯厅",
+      "floor": 2,
+      "area": 69.1,
+      "items": 2,
+      "collidable": 2,
+      "collisions": 0
+    }
+  ],
+  "glb": {
+    "file": "maison-lumiere-villa.glb",
+    "ok": true,
+    "checks": {
+      "magic": true,
+      "version": true,
+      "declaredLength": true,
+      "jsonChunk": true,
+      "binChunk": true,
+      "embeddedBuffers": true,
+      "embeddedImages": true,
+      "allPrimitivesHavePositions": true,
+      "requiredNodes": true,
+      "noErrors": true
+    },
+    "stats": {
+      "meshes": 676,
+      "primitives": 676,
+      "triangles": 1166192,
+      "vertices": 933696,
+      "materials": 81,
+      "textures": 41,
+      "images": 41,
+      "imageMB": 2.5,
+      "nodes": 826,
+      "floors": 3,
+      "rooms": 20,
+      "glbMB": 24.51,
+      "glbBytes": 25696456,
+      "extensionsUsed": [
+        "KHR_materials_clearcoat",
+        "KHR_materials_emissive_strength",
+        "KHR_materials_ior",
+        "KHR_materials_sheen",
+        "KHR_materials_unlit",
+        "KHR_mesh_quantization",
+        "KHR_texture_transform"
+      ],
+      "render": "PBR · realtime shadows · ACES tone mapping"
+    },
+    "missingNodes": []
+  },
+  "khronos": {
+    "validatorVersion": "2.0.0-dev.3.10",
+    "numErrors": 0,
+    "numWarnings": 353,
+    "numInfos": 2,
+    "numHints": 0,
+    "note": "Warnings are portability notices for runtime-generated tangent space on normal-mapped primitives; the GLB is valid and Three.js generates tangents at runtime."
+  }
+}

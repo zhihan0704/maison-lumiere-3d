@@ -1,0 +1,973 @@
+{
+  "schema": "maison-lumiere/v1",
+  "title": "Maison Lumière · 卢米埃庄园",
+  "subtitle": "A Three-Storey French Villa",
+  "generated": "2026-10-19T15:07:59.178Z",
+  "dimensions": {
+    "width": "27.4 m",
+    "depth": "17.3 m",
+    "height": "17.2 m",
+    "site": "54 × 62 m"
+  },
+  "floors": [
+    {
+      "index": 0,
+      "id": "floor-0",
+      "name": "一层",
+      "nameFr": "Rez-de-chaussée",
+      "base": 0.35,
+      "height": 3.5,
+      "label": "礼仪层 · 会客与宴飨",
+      "description": "入口门厅、大沙龙、餐厅、书房与厨房，构成法式宅邸的礼仪动线。",
+      "rooms": [
+        "salon",
+        "dining",
+        "vestibule",
+        "stair-gf",
+        "library",
+        "kitchen"
+      ]
+    },
+    {
+      "index": 1,
+      "id": "floor-1",
+      "name": "二层",
+      "nameFr": "Premier étage",
+      "base": 4.1,
+      "height": 3.35,
+      "label": "私密层 · 主卧与客房",
+      "description": "主卧套房、衣帽间、浴室与两间客卧，围绕安静的中央家庭厅展开。",
+      "rooms": [
+        "master-suite",
+        "master-bath",
+        "dressing",
+        "guest-1",
+        "guest-2",
+        "guest-bath",
+        "family-lounge",
+        "landing-1"
+      ]
+    },
+    {
+      "index": 2,
+      "id": "floor-2",
+      "name": "三层",
+      "nameFr": "Deuxième étage",
+      "base": 7.7,
+      "height": 3.25,
+      "label": "观景层 · 艺术与休闲",
+      "description": "观景厅、客卧、画室、私人影院与健身房，面向屋顶与花园展开。",
+      "rooms": [
+        "belvedere",
+        "suite-3",
+        "atelier",
+        "cinema",
+        "gym",
+        "landing-3"
+      ]
+    }
+  ],
+  "rooms": [
+    {
+      "id": "salon",
+      "name": "大沙龙",
+      "nameFr": "Grand Salon",
+      "floor": 0,
+      "floorName": "一层",
+      "area": 65.3,
+      "bounds": [
+        -12.62,
+        -3.18,
+        0.7,
+        7.62
+      ],
+      "label3": [
+        -7.3,
+        1.9300000000000002,
+        5.3
+      ],
+      "description": "面向南侧花园的礼仪沙龙。壁炉、三角钢琴与两组法式座椅围绕中轴展开，深古铜窗框与丝绒窗帘构成温润的明暗层次。",
+      "features": [
+        "白玉石壁炉",
+        "三角钢琴",
+        "手工簇绒沙发",
+        "波斯羊毛地毯"
+      ],
+      "palette": [
+        "米白石材",
+        "深古铜",
+        "海军蓝丝绒",
+        "黄铜"
+      ],
+      "areaLabel": "礼仪会客厅"
+    },
+    {
+      "id": "dining",
+      "name": "餐厅",
+      "nameFr": "Salle à Manger",
+      "floor": 0,
+      "floorName": "一层",
+      "area": 65.3,
+      "bounds": [
+        3.18,
+        12.62,
+        0.7,
+        7.62
+      ],
+      "label3": [
+        8.1,
+        1.9300000000000002,
+        6.3
+      ],
+      "description": "可容纳八人的核桃木长桌与米色大理石台面居于轴心。餐边柜、酒具与黄铜烛台为正式宴会提供了完整而从容的礼仪序列。",
+      "features": [
+        "八人核桃木餐桌",
+        "米色大理石台面",
+        "黄铜水晶吊灯",
+        "餐边柜与酒具"
+      ],
+      "palette": [
+        "暖米色",
+        "胡桃木",
+        "亚麻",
+        "古铜"
+      ],
+      "areaLabel": "宴飨与酒会"
+    },
+    {
+      "id": "vestibule",
+      "name": "门厅",
+      "nameFr": "Vestibule",
+      "floor": 0,
+      "floorName": "一层",
+      "area": 37.7,
+      "bounds": [
+        -2.97,
+        2.97,
+        1.28,
+        7.62
+      ],
+      "label3": [
+        0,
+        1.9300000000000002,
+        5.25
+      ],
+      "description": "双扇古铜大门之后，是带大理石拼花与穹顶吊灯的门厅。中央圆桌、对称边几和尽头楼梯共同建立法式宅邸的第一重仪式感。",
+      "features": [
+        "大理石拼花",
+        "中央圆桌",
+        "黄铜吊灯",
+        "对称边几"
+      ],
+      "palette": [
+        "米色大理石",
+        "白色石膏",
+        "黄铜",
+        "深古铜"
+      ],
+      "areaLabel": "迎宾序列"
+    },
+    {
+      "id": "stair-gf",
+      "name": "荣誉楼梯厅",
+      "nameFr": "Escalier d’Honneur",
+      "floor": 0,
+      "floorName": "一层",
+      "area": 52.9,
+      "bounds": [
+        -2.97,
+        2.97,
+        -7.62,
+        1.28
+      ],
+      "label3": [
+        0,
+        1.9300000000000002,
+        -6.35
+      ],
+      "description": "对称双跑楼梯围绕中央梯井展开，蓝色丝绒地毯与黄铜压杆勾勒出行进方向。挑空尽端的高窗将北向天光引入室内。",
+      "features": [
+        "对称双跑楼梯",
+        "丝绒踏步地毯",
+        "黄铜压杆",
+        "挑空高窗"
+      ],
+      "palette": [
+        "白色石材",
+        "胡桃木",
+        "海军蓝丝绒",
+        "黄铜"
+      ],
+      "areaLabel": "垂直交通"
+    },
+    {
+      "id": "library",
+      "name": "书房",
+      "nameFr": "Bibliothèque",
+      "floor": 0,
+      "floorName": "一层",
+      "area": 76.4,
+      "bounds": [
+        -12.62,
+        -3.18,
+        -7.62,
+        0.47
+      ],
+      "label3": [
+        -7.7,
+        1.9300000000000002,
+        -5.6
+      ],
+      "description": "整墙核桃木书柜与做旧黄铜导轨构成藏书空间。写字台面向花园，壁炉旁设阅读椅，是宅邸中最安静的角落。",
+      "features": [
+        "整墙书柜",
+        "核桃木写字台",
+        "黄铜阅读灯",
+        "壁炉与阅读椅"
+      ],
+      "palette": [
+        "胡桃木",
+        "墨绿",
+        "黄铜",
+        "米白"
+      ],
+      "areaLabel": "藏书与静思"
+    },
+    {
+      "id": "kitchen",
+      "name": "厨房与早餐区",
+      "nameFr": "Cuisine d’Office",
+      "floor": 0,
+      "floorName": "一层",
+      "area": 76.4,
+      "bounds": [
+        3.18,
+        12.62,
+        -7.62,
+        0.47
+      ],
+      "label3": [
+        8.1,
+        1.9300000000000002,
+        -2.25
+      ],
+      "description": "隐藏式冰箱、大理石中岛与黄铜龙头组成专业厨房，北侧早餐角可容纳两人。操作动线与管家通道保持清晰分离。",
+      "features": [
+        "大理石中岛",
+        "黄铜吊灯",
+        "专业灶具",
+        "早餐角"
+      ],
+      "palette": [
+        "米白烤漆",
+        "白色大理石",
+        "黄铜",
+        "橡木"
+      ],
+      "areaLabel": "烹饪与晨间"
+    },
+    {
+      "id": "master-suite",
+      "name": "主卧套房",
+      "nameFr": "Suite Principale",
+      "floor": 1,
+      "floorName": "二层",
+      "area": 65.3,
+      "bounds": [
+        -12.62,
+        -3.18,
+        0.7,
+        7.62
+      ],
+      "label3": [
+        -7.7,
+        5.68,
+        5.1
+      ],
+      "description": "主卧以软包床头墙与鼠尾草绿丝绒建立宁静基调，南向与西向双面采光。书桌、扶手椅与床尾凳完善了休憩、阅读与更衣的完整日常。",
+      "features": [
+        "簇绒软包床",
+        "鼠尾草丝绒",
+        "手写书桌",
+        "双面采光"
+      ],
+      "palette": [
+        "鼠尾草绿",
+        "亚麻白",
+        "胡桃木",
+        "黄铜"
+      ],
+      "areaLabel": "主人私域"
+    },
+    {
+      "id": "master-bath",
+      "name": "主卫",
+      "nameFr": "Bain Principal",
+      "floor": 1,
+      "floorName": "二层",
+      "area": 35.1,
+      "bounds": [
+        -12.62,
+        -8.28,
+        -7.62,
+        0.47
+      ],
+      "label3": [
+        -10.7,
+        5.68,
+        -5.7
+      ],
+      "description": "独立浴缸面向西侧窗景，双台盆与大理石立面延续建筑的米色调。黄铜五金与白瓷共同营造安静、温润的水疗氛围。",
+      "features": [
+        "独立浴缸",
+        "双台盆",
+        "黄铜五金",
+        "大理石墙面"
+      ],
+      "palette": [
+        "白色大理石",
+        "象牙白",
+        "黄铜",
+        "暖灰"
+      ],
+      "areaLabel": "水疗式卫浴"
+    },
+    {
+      "id": "dressing",
+      "name": "衣帽间",
+      "nameFr": "Cabinet de Toilette",
+      "floor": 1,
+      "floorName": "二层",
+      "area": 41.3,
+      "bounds": [
+        -8.28,
+        -3.18,
+        -7.62,
+        0.47
+      ],
+      "label3": [
+        -5.8,
+        5.68,
+        -5
+      ],
+      "description": "两侧嵌入式衣柜与中央梳妆台形成高效而私密的更衣空间。穿衣镜、丝绒坐凳与香氛陈列让日常更衣也保有法式仪式感。",
+      "features": [
+        "嵌入式衣柜",
+        "梳妆台",
+        "穿衣镜",
+        "丝绒坐凳"
+      ],
+      "palette": [
+        "胡桃木",
+        "玫瑰灰",
+        "黄铜",
+        "亚麻"
+      ],
+      "areaLabel": "更衣与梳妆"
+    },
+    {
+      "id": "guest-1",
+      "name": "客卧一",
+      "nameFr": "Chambre d’Amis",
+      "floor": 1,
+      "floorName": "二层",
+      "area": 65.3,
+      "bounds": [
+        3.18,
+        12.62,
+        0.7,
+        7.62
+      ],
+      "label3": [
+        7.6,
+        5.68,
+        5.2
+      ],
+      "description": "南向客房以蓝色肌理墙纸与亚麻床品为主调。床尾凳、扶手椅与独立衣柜满足长住客人的完整需求，窗外正对前庭花坛。",
+      "features": [
+        "软包双人床",
+        "蓝色墙纸",
+        "独立衣柜",
+        "花园景观"
+      ],
+      "palette": [
+        "雾蓝",
+        "亚麻白",
+        "胡桃木",
+        "黄铜"
+      ],
+      "areaLabel": "南向客房"
+    },
+    {
+      "id": "guest-2",
+      "name": "客卧二",
+      "nameFr": "Chambre Jaune",
+      "floor": 1,
+      "floorName": "二层",
+      "area": 46.3,
+      "bounds": [
+        3.18,
+        8.9,
+        -7.62,
+        0.47
+      ],
+      "label3": [
+        6.5,
+        5.68,
+        -4.7
+      ],
+      "description": "带独立卫浴的北向客房，床头背倚安静的内墙，写字台面向后花园。暖木色与鼠尾草织物构成适合阅读与休息的淡雅氛围。",
+      "features": [
+        "独立卫浴",
+        "花园书桌",
+        "嵌入式衣柜",
+        "羊毛地毯"
+      ],
+      "palette": [
+        "鼠尾草",
+        "暖白",
+        "胡桃木",
+        "古铜"
+      ],
+      "areaLabel": "套房式客卧"
+    },
+    {
+      "id": "guest-bath",
+      "name": "客卫",
+      "nameFr": "Salle d’Eau",
+      "floor": 1,
+      "floorName": "二层",
+      "area": 30.1,
+      "bounds": [
+        8.9,
+        12.62,
+        -7.62,
+        0.47
+      ],
+      "label3": [
+        10.7,
+        5.68,
+        -2.2
+      ],
+      "description": "为北向客房服务的独立卫浴，布置小型双台盆、步入式淋浴与黄铜壁灯。窗下是后花园的树木，私密而明亮。",
+      "features": [
+        "步入式淋浴",
+        "黄铜花洒",
+        "双台盆",
+        "大理石地面"
+      ],
+      "palette": [
+        "白色大理石",
+        "象牙白",
+        "黄铜",
+        "亚麻"
+      ],
+      "areaLabel": "客用卫浴"
+    },
+    {
+      "id": "family-lounge",
+      "name": "家庭起居厅",
+      "nameFr": "Salon de Famille",
+      "floor": 1,
+      "floorName": "二层",
+      "area": 37.7,
+      "bounds": [
+        -2.97,
+        2.97,
+        1.28,
+        7.62
+      ],
+      "label3": [
+        0,
+        5.68,
+        5.85
+      ],
+      "description": "连接二层各房间的中央家庭厅，两张对置的丝绒双人椅围合茶几，前方法式门通向观景阳台。这里是从公共礼仪层进入私密层的第一处缓冲。",
+      "features": [
+        "对置双人椅",
+        "观景阳台",
+        "黄铜吊灯",
+        "羊毛地毯"
+      ],
+      "palette": [
+        "灰绿丝绒",
+        "米白",
+        "黄铜",
+        "胡桃木"
+      ],
+      "areaLabel": "家庭共处"
+    },
+    {
+      "id": "landing-1",
+      "name": "二层楼梯厅",
+      "nameFr": "Palier d’Étage",
+      "floor": 1,
+      "floorName": "二层",
+      "area": 52.9,
+      "bounds": [
+        -2.97,
+        2.97,
+        -7.62,
+        1.28
+      ],
+      "label3": [
+        0,
+        5.68,
+        -6.7
+      ],
+      "description": "二层楼梯厅以石质栏杆围合梯井，连接四间卧室与家庭起居厅。尽端的长凳与绿植形成短暂停留的安静角落。",
+      "features": [
+        "梯井栏杆",
+        "石质台面",
+        "长凳",
+        "天光"
+      ],
+      "palette": [
+        "米白",
+        "大理石",
+        "黄铜",
+        "绿植"
+      ],
+      "areaLabel": "楼层枢纽"
+    },
+    {
+      "id": "belvedere",
+      "name": "观景厅",
+      "nameFr": "Salon Belvédère",
+      "floor": 2,
+      "floorName": "三层",
+      "area": 49.2,
+      "bounds": [
+        -3.88,
+        3.88,
+        1.28,
+        7.62
+      ],
+      "label3": [
+        0,
+        9.280000000000001,
+        6.35
+      ],
+      "description": "位于三层中轴的观景厅，三角形钢琴与观景阳台共同构成宅邸最高处的私人音乐室。南向门窗将天空与花园一并纳入室内。",
+      "features": [
+        "三角形钢琴",
+        "观景阳台",
+        "黄铜望远镜",
+        "弧形天光"
+      ],
+      "palette": [
+        "海军蓝丝绒",
+        "黑檀",
+        "黄铜",
+        "米白"
+      ],
+      "areaLabel": "顶部观景与音乐"
+    },
+    {
+      "id": "suite-3",
+      "name": "客卧套房",
+      "nameFr": "Suite d’Angle",
+      "floor": 2,
+      "floorName": "三层",
+      "area": 58.8,
+      "bounds": [
+        -12.62,
+        -4.13,
+        0.7,
+        7.62
+      ],
+      "label3": [
+        -7.8,
+        9.280000000000001,
+        5.2
+      ],
+      "description": "拥有双面采光的转角客房，床头的玫瑰灰墙纸与丝绒软包延续法式私宅的柔和。西侧衣柜和南向书桌让空间兼具停留与工作。",
+      "features": [
+        "双面采光",
+        "丝绒软包床",
+        "转角衣柜",
+        "手写书桌"
+      ],
+      "palette": [
+        "玫瑰灰",
+        "亚麻白",
+        "胡桃木",
+        "黄铜"
+      ],
+      "areaLabel": "转角套房"
+    },
+    {
+      "id": "atelier",
+      "name": "画室",
+      "nameFr": "Atelier d’Artiste",
+      "floor": 2,
+      "floorName": "三层",
+      "area": 58.8,
+      "bounds": [
+        4.13,
+        12.62,
+        0.7,
+        7.62
+      ],
+      "label3": [
+        8,
+        9.280000000000001,
+        5.9
+      ],
+      "description": "顶层画室以一张大工作台和面向南窗的画架为中心。颜料、画布和雕塑台自由散落，形成松弛而有秩序的创作现场。",
+      "features": [
+        "大工作台",
+        "南向画架",
+        "雕塑台",
+        "画布与颜料"
+      ],
+      "palette": [
+        "橡木",
+        "亚麻",
+        "赭石",
+        "黄铜"
+      ],
+      "areaLabel": "创作与收藏"
+    },
+    {
+      "id": "cinema",
+      "name": "私人影院",
+      "nameFr": "Cinéma Privé",
+      "floor": 2,
+      "floorName": "三层",
+      "area": 68.7,
+      "bounds": [
+        -12.62,
+        -4.13,
+        -7.62,
+        0.47
+      ],
+      "label3": [
+        -8.2,
+        9.280000000000001,
+        -0.8
+      ],
+      "description": "以深色丝绒和胡桃木包覆的私人影院，后墙嵌入整幅投影幕。模块沙发与黄铜边几提供六人舒适观影，同时保留完整的声学软包。",
+      "features": [
+        "整墙投影幕",
+        "模块沙发",
+        "声学软包",
+        "独立投影机"
+      ],
+      "palette": [
+        "深灰丝绒",
+        "黑檀",
+        "胡桃木",
+        "黄铜"
+      ],
+      "areaLabel": "沉浸式影音"
+    },
+    {
+      "id": "gym",
+      "name": "私人健身房",
+      "nameFr": "Salle de Sport",
+      "floor": 2,
+      "floorName": "三层",
+      "area": 68.7,
+      "bounds": [
+        4.13,
+        12.62,
+        -7.62,
+        0.47
+      ],
+      "label3": [
+        8,
+        9.280000000000001,
+        -6.4
+      ],
+      "description": "三层后侧的私人健身房以镜面墙延伸空间，跑步机、力量训练与瑜伽区彼此分离。窗外是后花园树冠，运动时仍可见绿意。",
+      "features": [
+        "整墙镜面",
+        "力量训练区",
+        "瑜伽区",
+        "花园景观"
+      ],
+      "palette": [
+        "黑色橡胶",
+        "胡桃木",
+        "镜面",
+        "黄铜"
+      ],
+      "areaLabel": "康体与训练"
+    },
+    {
+      "id": "landing-3",
+      "name": "三层楼梯厅",
+      "nameFr": "Palier du Belvédère",
+      "floor": 2,
+      "floorName": "三层",
+      "area": 69.1,
+      "bounds": [
+        -3.88,
+        3.88,
+        -7.62,
+        1.28
+      ],
+      "label3": [
+        0,
+        9.280000000000001,
+        -6.7
+      ],
+      "description": "顶层楼梯厅以雕塑和壁灯收束垂直旅程。石质栏杆围合梯井，四周分别通往观景厅、客卧、画室、影院与健身房。",
+      "features": [
+        "石质栏杆",
+        "雕塑",
+        "壁灯",
+        "梯井"
+      ],
+      "palette": [
+        "米白",
+        "大理石",
+        "黄铜",
+        "胡桃木"
+      ],
+      "areaLabel": "顶层枢纽"
+    }
+  ],
+  "gardenLabels": [
+    {
+      "id": "garden-fountain",
+      "name": "法式喷泉",
+      "nameFr": "Fontaine d’Axe",
+      "pos": [
+        0,
+        1.7,
+        18.3
+      ],
+      "kind": "garden",
+      "desc": "以浅灰花岗岩铺就的圆形广场为中心，四出水柱汇入蓝马赛克池底，是前庭的视觉焦点。"
+    },
+    {
+      "id": "garden-parterre",
+      "name": "镜像花坛",
+      "nameFr": "Parterres Brodés",
+      "pos": [
+        -12,
+        1.6,
+        18.7
+      ],
+      "kind": "garden",
+      "desc": "黄杨矮篱围合出规整的刺绣花坛，薰衣草与玫瑰按轴线对称种植，四季皆有香气与色彩。"
+    },
+    {
+      "id": "garden-allee",
+      "name": "林荫步道",
+      "nameFr": "Allée Cavalière",
+      "pos": [
+        20.8,
+        1.8,
+        18.4
+      ],
+      "kind": "garden",
+      "desc": "列植的柱状椴树与低矮绿篱共同框定中央轴线，浅灰荔枝面花岗岩步道延伸至铁艺大门。"
+    },
+    {
+      "id": "garden-pool",
+      "name": "后池与日光台",
+      "nameFr": "Miroir d’Eau",
+      "pos": [
+        0,
+        1.6,
+        -18.5
+      ],
+      "kind": "garden",
+      "desc": "后花园的镜面水池以蓝色玻璃马赛克铺底，两端设小喷泉与日光躺椅，倒映建筑北立面。"
+    },
+    {
+      "id": "garden-pergola",
+      "name": "藤架餐叙",
+      "nameFr": "Pergola de Roses",
+      "pos": [
+        17,
+        2,
+        -12.6
+      ],
+      "kind": "garden",
+      "desc": "白色木柱攀满藤本月季，防腐木户外餐桌配白色布艺坐垫，适合花园中的长桌晚宴。"
+    }
+  ],
+  "materials": {
+    "facade": "米白色哑光石灰石 + 暖米色真石漆，白色高光石膏装饰",
+    "metal": "深古铜色窗框、黄铜哑光五金",
+    "roof": "浅灰色陶瓦，程序化瓦垄法线与风化粗糙度",
+    "interior": "米色大理石拼花、人字橡木地板、法式护墙板与肌理墙纸",
+    "garden": "荔枝面浅灰花岗岩、蓝玻璃马赛克池底"
+  },
+  "validation": {
+    "summary": {
+      "rooms": 20,
+      "floors": 3,
+      "furnitureObjects": 133,
+      "collidableObjects": 125,
+      "autoFixes": 10,
+      "collisions": 0,
+      "failures": 0,
+      "totalArea": 1121,
+      "khronosErrors": 0,
+      "glbOk": true,
+      "checksPassed": 8,
+      "checksTotal": 8
+    },
+    "checks": [
+      {
+        "id": "bounds",
+        "label": "家具均在房间边界内",
+        "status": "pass"
+      },
+      {
+        "id": "overlap",
+        "label": "家具之间无穿模/重叠",
+        "status": "pass"
+      },
+      {
+        "id": "support",
+        "label": "落地家具均有地面支撑",
+        "status": "pass"
+      },
+      {
+        "id": "ceiling",
+        "label": "所有物件低于净空",
+        "status": "pass"
+      },
+      {
+        "id": "doors",
+        "label": "门洞与主要通道保持净空",
+        "status": "pass"
+      },
+      {
+        "id": "labels",
+        "label": "房间标签落位于对应空间",
+        "status": "pass"
+      },
+      {
+        "id": "glb",
+        "label": "GLB 文件结构与嵌入资源完整",
+        "status": "pass"
+      },
+      {
+        "id": "khronos",
+        "label": "Khronos glTF 官方校验器 0 错误",
+        "status": "pass"
+      }
+    ],
+    "khronos": {
+      "validatorVersion": "2.0.0-dev.3.10",
+      "numErrors": 0,
+      "numWarnings": 353,
+      "numInfos": 2,
+      "numHints": 0,
+      "note": "Warnings are portability notices for runtime-generated tangent space on normal-mapped primitives; the GLB is valid and Three.js generates tangents at runtime."
+    },
+    "glbOk": true
+  },
+  "stats": {
+    "meshes": 676,
+    "primitives": 676,
+    "triangles": 1166192,
+    "vertices": 933696,
+    "materials": 81,
+    "textures": 41,
+    "images": 41,
+    "imageMB": 2.5,
+    "nodes": 826,
+    "floors": 3,
+    "rooms": 20,
+    "glbMB": 24.51,
+    "glbBytes": 25696456,
+    "extensionsUsed": [
+      "KHR_materials_clearcoat",
+      "KHR_materials_emissive_strength",
+      "KHR_materials_ior",
+      "KHR_materials_sheen",
+      "KHR_materials_unlit",
+      "KHR_mesh_quantization",
+      "KHR_texture_transform"
+    ],
+    "render": "PBR · realtime shadows · ACES tone mapping"
+  },
+  "cameraPresets": {
+    "hero": {
+      "position": [
+        39,
+        23,
+        43
+      ],
+      "target": [
+        0,
+        5.1,
+        1.5
+      ],
+      "fov": 33
+    },
+    "front": {
+      "position": [
+        0,
+        11.5,
+        45
+      ],
+      "target": [
+        0,
+        6.4,
+        0
+      ],
+      "fov": 31
+    },
+    "rear": {
+      "position": [
+        0,
+        10.5,
+        -43
+      ],
+      "target": [
+        0,
+        5.2,
+        -3
+      ],
+      "fov": 33
+    },
+    "aerial": {
+      "position": [
+        30,
+        34,
+        32
+      ],
+      "target": [
+        0,
+        3.5,
+        0
+      ],
+      "fov": 35
+    }
+  },
+  "visual": {
+    "edition": "Golden Hour / Blue Hour",
+    "mood": "warm low-angle sunset, atmospheric haze, soft volumetric glow, layered planting, reflective water",
+    "grade": "ACES filmic + cinematic warm/cool split grade + vignette + subtle grain"
+  },
+  "assets": {
+    "glb": {
+      "file": "maison-lumiere-villa.glb",
+      "bytes": 25696456,
+      "mb": 24.51,
+      "quantized": true
+    },
+    "standalone": {
+      "file": "法式别墅-交互式3D.html",
+      "note": "single-file offline viewer with embedded GLB"
+    },
+    "external": {
+      "file": "index-external.html",
+      "note": "loads maison-lumiere-villa.glb from the same directory"
+    }
+  },
+  "exportNotes": {
+    "generatedBy": "Maison Lumière procedural builder + @gltf-transform",
+    "pipeline": "Three.js GLTFExporter → weld → dedup → quantize (KHR_mesh_quantization) → prune",
+    "compatibility": "Three.js GLTFLoader / browsers; no Draco or Meshopt decoder required"
+  }
+}

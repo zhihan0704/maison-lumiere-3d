@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maison Lumière · Builder</title>
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#aab9c3;color:#2e2a24;font:14px/1.4 Georgia,serif}
+  #stage{position:fixed;inset:0}
+  #hud{position:fixed;left:28px;bottom:26px;max-width:420px;padding:18px 20px;background:rgba(249,244,234,.9);border:1px solid rgba(133,107,66,.35);backdrop-filter:blur(12px);box-shadow:0 10px 40px rgba(40,32,20,.18)}
+  h1{font-size:17px;letter-spacing:.14em;margin:0 0 8px;font-weight:500}
+  #status{font-size:12px;color:#6b5c46;white-space:pre-wrap}
+  #badge{position:fixed;right:26px;top:24px;background:rgba(249,244,234,.9);border:1px solid rgba(133,107,66,.35);padding:10px 16px;font-size:11px;letter-spacing:.12em}
+  #error{position:fixed;left:20px;top:20px;right:20px;background:#711d1d;color:#fff;padding:16px;display:none;white-space:pre-wrap;z-index:9;font:12px monospace}
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<div id="badge">GEOMETRY LAB · MAISON LUMIÈRE</div>
+<div id="hud"><h1>卢米埃庄园 · 模型生成中</h1><div id="status">初始化渲染器…</div></div>
+<div id="error"></div>
+<script type="importmap">
+{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}
+</script>
+<script type="module" src="/src/build.js"></script>
+</body>
+</html>

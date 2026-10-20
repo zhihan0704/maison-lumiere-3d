@@ -1,0 +1,42 @@
+{
+  "file": "D:\\文档\\deepseek-harness\\default-workspace\\maison-lumiere-villa.glb",
+  "ok": true,
+  "checks": {
+    "magic": true,
+    "version": true,
+    "declaredLength": true,
+    "jsonChunk": true,
+    "binChunk": true,
+    "embeddedBuffers": true,
+    "embeddedImages": true,
+    "allPrimitivesHavePositions": true,
+    "requiredNodes": true,
+    "noErrors": true
+  },
+  "stats": {
+    "meshes": 676,
+    "primitives": 676,
+    "triangles": 1166192,
+    "vertices": 933696,
+    "materials": 81,
+    "textures": 41,
+    "images": 41,
+    "imageMB": 2.5,
+    "nodes": 826,
+    "floors": 3,
+    "rooms": 20,
+    "glbMB": 24.51,
+    "glbBytes": 25696456,
+    "extensionsUsed": [
+      "KHR_materials_clearcoat",
+      "KHR_materials_emissive_strength",
+      "KHR_materials_ior",
+      "KHR_materials_sheen",
+      "KHR_materials_unlit",
+      "KHR_mesh_quantization",
+      "KHR_texture_transform"
+    ],
+    "render": "PBR · realtime shadows · ACES tone mapping"
+  },
+  "missingNames": []
+}
